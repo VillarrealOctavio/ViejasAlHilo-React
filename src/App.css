@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+.bordeRedondo {
+  border-radius: 13px;
+}
+.bgMostaza{
+  background-color: #D39914;
+}.bgVerde {
+  background-color: #08824c;
+}
+.bgBlackGradient {
+  background-image: linear-gradient(to bottom, #000, #a5a58d);
+}
+.bgBeige {
+  background-color: #a5a58d;
+}
+/* .fontTitulo {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20px;
+} */
+.bgBeigeGradient {
+  background-image: linear-gradient(to top, #000, #a5a58d);
+}
+/* a, p {
+  font-family: 'Montserrat Alternates', sans-serif;
+} */
+.btnGris {
+  background-color: #6b705c;
+  color: #fff;
+}
+.imgNosotras {
+  height: 200px;
+  width: 200px;
+}
+.negrita {
+  font-weight:bolder;
+}
+.fa-store {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+}
+
