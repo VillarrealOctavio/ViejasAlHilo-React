@@ -1,7 +1,8 @@
 import Item from "./Item";
 
 const mapear = (array)=>{
-    array.map(el=><Item 
+    array.map(el=>
+        <Item 
         key={el.id} 
         tipo={el.tipo} 
         precio={el.precio} 
