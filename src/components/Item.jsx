@@ -13,7 +13,7 @@ const Item = ({tipo, precio, img}) => {
           <CardMedia
             component="img"
             height="140"
-            image={img}
+            src={img}
             alt="img"
           />
           <CardContent>
@@ -26,7 +26,7 @@ const Item = ({tipo, precio, img}) => {
           </CardContent>
           <CardActions>
             <Button size="small">$ {precio}</Button>
-            <Button size="small">Detalle del producto</Button>
+            <Button size="small">Detalle</Button>
           </CardActions>
         </Card>
     );

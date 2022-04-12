@@ -1,5 +1,5 @@
 const stockBolsos = [
-    {id:11, tipo:"Homero", precio: 1500, img:require(`../utils/img/bolsos/Bolso-D-OH.png`), cantidad: 1, clase: "personalizado"},
+    {id:11, tipo:"Homero", precio: 1500, img: require(`../utils/img/bolsos/Bolso-D-OH.png`), cantidad: 1, clase: "personalizado"},
     {id:12, tipo:"Homero", precio: 1500, img:`/assets/img/bolsos/Bolso-frente-D-OH.png`, cantidad: 1, clase: "personalizado"},
     {id:13, tipo:"Homero", precio: 1500, img:`/assets/img/bolsos/Homero1.png`, cantidad: 1,clase: "personalizado"},
     {id:14, tipo:"Sasuke", precio: 2000, img:`/assets/img/bolsos/Sasuke.png`, cantidad: 1,clase: "personalizado"},
