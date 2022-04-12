@@ -6,7 +6,8 @@ import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from 'react';
-const { stockBolsos } = require('./products');
+import stockBolsos from './products'
+import MediaCard from './ItemDetail';
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
@@ -30,3 +31,5 @@ const ItemListContainer = () => {
     };
 
 export default ItemListContainer;
+
+// https://api.mercadolibre.com/sites/MLA/search?q=mate    (API DE MELI)
