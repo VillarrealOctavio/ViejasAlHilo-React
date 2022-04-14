@@ -8,21 +8,31 @@ import customFetch from '../utils/customFetch';
 import { useEffect, useState } from 'react';
 import stockBolsos from './products'
 import MediaCard from './ItemDetail';
+import { useParams } from 'react-router-dom';
+
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
+    const {idCategory} = useParams();
+
+
     useEffect(() => {
-        customFetch(2000, stockBolsos)
+        if(idCategory == undefined){
+            customFetch(2000, stockBolsos)
             .then(result => setDatos(result))
             .catch(err => console.log(err))
-    }, []);
+        }else {
+            customFetch(2000, stockBolsos.filter(el => el.clase === idCategory))
+                .then(result => setDatos(result))
+                .catch(err => console.log(err))
+        }
+    }, [idCategory]);
     
         return(
             <>
                 <List>
                     <ListItem className='d-flex flex-column'>
                         <ListItemText primary="Viejas al Hilo"/>
-                        <ItemCount stock={5} initial={1}/>
                         <ItemList productos={datos}/>
                     </ListItem>
                 </List>

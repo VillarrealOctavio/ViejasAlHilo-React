@@ -10,7 +10,8 @@ const ItemList = ({productos}) => {
                         key={el.id} 
                         tipo={el.tipo} 
                         precio={el.precio} 
-                        img={el.imagen}/>)
+                        img={el.imagen}
+                        clase={el.clase}/>)
                         :<p>Aguarde un momento...</p>
                        
                 }
