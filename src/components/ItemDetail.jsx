@@ -12,8 +12,7 @@ const ItemDetail = ({item}) => {
     return (
         <> 
             {
-                item?
-
+                item ?
                 <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
