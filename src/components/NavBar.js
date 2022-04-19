@@ -1,6 +1,7 @@
 import CartWidget from "./CartWidget";
 import imgLogo from "../logoHorizontalCopia.png"
 import { Link } from 'react-router-dom';
+import SearchForm from './SearchForm'
  
 const NavBar = () => {
     return( 
@@ -40,6 +41,7 @@ const NavBar = () => {
                             </li>
                         </Link>
                         </ul>
+                        <SearchForm/>
                     </div>
                     <div className="col-md-1">
                         <CartWidget />
