@@ -2,8 +2,7 @@
 const SearchForm = () => {
     return(
         <>
-         Input 
-         Icon
+     
         </>
     );
 };

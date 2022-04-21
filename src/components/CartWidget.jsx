@@ -2,8 +2,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCartOutlined';
 import React from "react";
 import Badge from '@mui/material/Badge';
 
-class CartWidget extends React.Component{
-    render(){
+const CartWidget = () => {
         return(
             <>
                 <Badge badgeContent={4}>
@@ -12,5 +11,5 @@ class CartWidget extends React.Component{
             </>
         );
     }
-}
+
 export default CartWidget;

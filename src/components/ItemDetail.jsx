@@ -6,9 +6,17 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography'; 
 import ItemCount from './ItemCount';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({item}) => {
+    const [itemCount, setItemCount] = useState(0);
+
+    const onAdd = (qty) => {
+        alert("You have selected " + qty + " items.");
+        setItemCount(qty);
+    }
     return (
         <> 
             {
@@ -17,7 +25,7 @@ const ItemDetail = ({item}) => {
                 <CardMedia
                     component="img"
                     height="140"
-                    src={item.img}
+                    image={item.img}
                     alt="img"
                 />
                 <CardContent>
@@ -32,7 +40,11 @@ const ItemDetail = ({item}) => {
                     <Button size="small">$ {item.precio}</Button>
                     <Button size="small">Detalle</Button>
                 </CardActions>
-                <ItemCount/>
+                {
+                    itemCount === 0
+                    ? <ItemCount initial={itemCount} onAdd={onAdd} />
+                    : <Link to='./Cart'><Button variant="contained" color="secondary">CheckOut</Button></Link>
+                }
                 </Card> : 
                 <p>Cargando...</p>
             }

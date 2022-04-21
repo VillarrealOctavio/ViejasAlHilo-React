@@ -27,7 +27,7 @@ const Item = ({tipo, precio, img, clase, id}) => {
           <CardActions>
             <Button size="small">Clase: {clase}</Button>
             <Button size="small">$ {precio}</Button>
-            <Link to='/item/${id}'>
+            <Link to= '/item/${id}'>
               <Button size="small">Detalle</Button>
             </Link>  
           </CardActions>

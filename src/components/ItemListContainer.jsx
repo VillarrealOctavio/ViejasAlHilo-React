@@ -1,4 +1,3 @@
-import React from 'react';
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
@@ -13,22 +12,18 @@ import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
-    const {idCategory} = useParams();
-
-
-    useEffect(() => {
-        if(idCategory == undefined){
-            customFetch(2000, stockBolsos)
+    const { idCategory } = useParams();
+     
+        useEffect(() => {
+        customFetch(2000, stockBolsos.filter(item => {
+            if (idCategory === undefined) return item;
+            return item.clase === idCategory
+        }))
             .then(result => setDatos(result))
             .catch(err => console.log(err))
-        }else {
-            customFetch(2000, stockBolsos.filter(el => el.clase === idCategory))
-                .then(result => setDatos(result))
-                .catch(err => console.log(err))
-        }
     }, [idCategory]);
     
-        return(
+    return(
             <>
                 <List>
                     <ListItem className='d-flex flex-column'>
