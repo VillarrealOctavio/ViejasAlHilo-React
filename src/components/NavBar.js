@@ -44,7 +44,7 @@ const NavBar = () => {
                         <SearchForm/>
                     </div>
                     <div className="col-md-1">
-                        <CartWidget />
+                    <Link to ='./cart'><CartWidget/></Link>
                     </div>
             </div>
         </>

@@ -6,16 +6,19 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography'; 
 import ItemCount from './ItemCount';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
 
 
 const ItemDetail = ({item}) => {
     const [itemCount, setItemCount] = useState(0);
+    const test = useContext(CartContext)
 
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");
         setItemCount(qty);
+        test.addToCart(item)
     }
     return (
         <> 
@@ -43,11 +46,12 @@ const ItemDetail = ({item}) => {
                 {
                     itemCount === 0
                     ? <ItemCount initial={itemCount} onAdd={onAdd} />
-                    : <Link to='./Cart'><Button variant="contained" color="secondary">CheckOut</Button></Link>
+                    : <Link to='/cart'><Button variant="contained" color="secondary">CheckOut</Button></Link>
                 }
                 </Card> : 
                 <p>Cargando...</p>
             }
+            
         </>
     );
 }
