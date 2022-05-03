@@ -5,9 +5,10 @@ import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import customFetch from '../utils/customFetch';
 import { useEffect, useState } from 'react';
-import stockBolsos from './products'
 import MediaCard from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs } from "firebase/firestore";
+import db from '../utils/firebaseConfig'
 
 
 const ItemListContainer = () => {
@@ -15,13 +16,18 @@ const ItemListContainer = () => {
     const { idCategory } = useParams();
      
         useEffect(() => {
-        customFetch(2000, stockBolsos.filter(item => {
-            if (idCategory === undefined) return item;
-            return item.clase === idCategory
-        }))
-            .then(result => setDatos(result))
-            .catch(err => console.log(err))
-    }, [idCategory]);
+            const fetchFromFireStore = async () => {
+                const querySnapshot = await getDocs(collection(db, "products"));
+                const dataFromFireStore = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                return dataFromFireStore
+            }
+            fetchFromFireStore()
+                .then(result => setDatos(result))
+                .catch(err => console.log(err))
+    }, [datos]);
     
     return(
             <>
